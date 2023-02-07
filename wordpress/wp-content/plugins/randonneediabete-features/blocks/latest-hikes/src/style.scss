@@ -6,17 +6,14 @@
 
 .hikes {
 	width: 100%;
-  display: flex;
+  display: grid;
+	grid-template-columns: repeat(3, 1fr);
   gap: .8em;
 	justify-content: left;
-	a {
-		display: block;
-	}
 	&.col-3 {
 		justify-content: space-between;
 	}
 	article {
-		max-width: calc(var(--wp--style--global--content-size) / 3 - 0.8em);
 		background-color: white;
 		border-radius: var(--wp--custom--border-radius--default);
 		box-shadow: var(--wp--custom--shadow--default);
@@ -28,10 +25,11 @@
 			position: relative;
 			figure {
 				margin: 0;
-				height: 250px;
+				max-height: 250px;
 				overflow: hidden;
 				img {
-					object-fit: cover;
+					object-fit: cover !important;
+					max-width: 100%;
 					object-position: center;
 				}
 				&::after {

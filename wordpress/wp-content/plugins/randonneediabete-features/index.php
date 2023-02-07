@@ -87,40 +87,57 @@ add_action( 'rest_api_init', function () {
 });
 
 function get_hikes() {
-    global $wpdb;
+	global $wpdb;
 
-    $data = $wpdb->get_results("SELECT
-				post.post_title,
-				post.guid,
-				meta1.meta_value AS start_date,
-				meta2.meta_value AS town,
-				result.guid as image,
-				GROUP_CONCAT(t.name SEPARATOR ',') AS hike_types
-			FROM $wpdb->posts AS post
-				INNER JOIN $wpdb->postmeta AS meta1
-					ON meta1.post_id = post.ID
-					AND meta1.meta_key = 'start_date'
-				INNER JOIN $wpdb->postmeta AS meta2
-					ON meta2.post_id = post.ID
-					AND meta2.meta_key = 'town'
-				INNER JOIN $wpdb->postmeta AS pm
-					ON post.ID = pm.post_id
-					AND pm.meta_key = '_thumbnail_id'
-				INNER JOIN $wpdb->posts AS result
-					ON pm.meta_value = result.ID
-				INNER JOIN $wpdb->term_relationships AS tr
-					ON post.ID = tr.object_id
-				INNER JOIN $wpdb->term_taxonomy AS tt
-					ON tr.term_taxonomy_id = tt.term_taxonomy_id
-				INNER JOIN $wpdb->terms AS t
-					ON t.term_id = tt.term_id
-			WHERE post.post_type = 'hikes'
-				AND post.post_status = 'publish'
-				AND meta1.meta_value >= CURDATE()
-			GROUP BY post.ID
-			ORDER BY meta1.meta_value ASC;
-		");
+	$data = $wpdb->get_results("SELECT
+			post.post_title,
+			post.guid,
+			meta1.meta_value AS start_date,
+			meta2.meta_value AS town,
+			result.guid as image,
+			GROUP_CONCAT(t.name SEPARATOR ',') AS hike_types
+		FROM $wpdb->posts AS post
+			INNER JOIN $wpdb->postmeta AS meta1
+				ON meta1.post_id = post.ID
+				AND meta1.meta_key = 'start_date'
+			INNER JOIN $wpdb->postmeta AS meta2
+				ON meta2.post_id = post.ID
+				AND meta2.meta_key = 'town'
+			INNER JOIN $wpdb->postmeta AS pm
+				ON post.ID = pm.post_id
+				AND pm.meta_key = '_thumbnail_id'
+			INNER JOIN $wpdb->posts AS result
+				ON pm.meta_value = result.ID
+			INNER JOIN $wpdb->term_relationships AS tr
+				ON post.ID = tr.object_id
+			INNER JOIN $wpdb->term_taxonomy AS tt
+				ON tr.term_taxonomy_id = tt.term_taxonomy_id
+			INNER JOIN $wpdb->terms AS t
+				ON t.term_id = tt.term_id
+		WHERE post.post_type = 'hikes'
+			AND post.post_status = 'publish'
+			AND meta1.meta_value >= CURDATE()
+		GROUP BY post.ID
+		ORDER BY meta1.meta_value ASC
+		LIMIT 3;
+	");
 
-    return $data;
-;
+	return $data;
+}
+
+function render_frontend($attributes) {
+  if( !is_admin() ) {
+    wp_enqueue_script( 'rd_block', plugin_dir_url( __FILE__ ) . '/build/frontend.js');
+  }
+
+  ob_start(); ?>
+
+	<div class="data">
+		<pre>
+			<?php echo wp_json_encode( $attributes ) ?>
+		</pre>
+	</div>
+	<section class="hikes"></section>
+
+  <?php return ob_get_clean();
 }

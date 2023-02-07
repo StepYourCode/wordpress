@@ -1,5 +1,3 @@
-import { useBlockProps } from "@wordpress/block-editor";
-
 export default function save({ attributes: { posts } }) {
   if (!posts) {
     return <p>Loading...</p>;
@@ -9,10 +7,10 @@ export default function save({ attributes: { posts } }) {
   }
 
   return (
-    <section className={`hikes col-${posts.length}`}>
+    <section className="hikes">
       {posts.map((post) => {
         const date = new Date(post.start_date).toLocaleDateString("fr-FR");
-        const categories = post.hike_types.split(", ");
+        const categories = post.hike_types.split(",");
         return (
           <a href={post.guid}>
             <article>
@@ -40,9 +38,9 @@ export default function save({ attributes: { posts } }) {
                   {date} • {post.town}
                 </span>
                 <h4>{post.post_title}</h4>
-                <a href={post.guid} className="btn">
+                <button href={post.guid} className="btn">
                   En savoir plus
-                </a>
+                </button>
               </div>
             </article>
           </a>
