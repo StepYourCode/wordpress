@@ -1,1 +1,0 @@
-window.addEventListener("load",(()=>{const e=document.querySelector(".data pre").innerHTML,o=(document.querySelector(".hikes"),JSON.parse(e));console.log("Data from the front end",o)}));

@@ -8,8 +8,8 @@
 		"block": "latest-hikes"
 	},
 	"scripts": {
-		"start": "wp-scripts start blocks/$npm_package_config_block/src/index.js blocks/$npm_package_config_block/src/frontend.js --output-path=blocks/$npm_package_config_block/build/",
-		"build": "wp-scripts build blocks/$npm_package_config_block/src/index.js blocks/$npm_package_config_block/src/frontend.js --output-path=blocks/$npm_package_config_block/build/",
+		"start": "wp-scripts start blocks/$npm_package_config_block/src/index.js --output-path=blocks/$npm_package_config_block/build/",
+		"build": "wp-scripts build blocks/$npm_package_config_block/src/index.js --output-path=blocks/$npm_package_config_block/build/",
 		"format": "wp-scripts format",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
