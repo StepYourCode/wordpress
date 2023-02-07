@@ -19,7 +19,9 @@
  */
 function rd_blocks_block_init() {
 	// register_block_type( __DIR__ . '/blocks/base-block' ); => For example
-	register_block_type( __DIR__ . '/blocks/latest-hikes' );
+	register_block_type( __DIR__ . '/blocks/latest-hikes', array(
+    'render_callback' => 'render_frontend'
+  ) );
 }
 add_action('init', 'rd_blocks_block_init');
 
