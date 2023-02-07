@@ -7,7 +7,9 @@ services:
     ports:
       - 8079:3306
     volumes:
-      - ./database:/var/lib/mysql2
+      - type: bind
+        source: /database
+        target: /var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}

@@ -45,7 +45,29 @@ __webpack_require__.r(__webpack_exports__);
   if (posts.length === 0) {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "No hikes scheduled!");
   }
-  return posts && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Salut");
+  return posts && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
+    className: `hikes col-${posts.length}`
+  }, posts.map(post => {
+    const date = new Date(post.start_date).toLocaleDateString("fr-FR");
+    const categories = post.hike_types.split(",");
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+      href: "test"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("article", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "img"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: post.image,
+      alt: `Image de notre prochaine randonnée ${post.post_title}`
+    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+      className: "categories"
+    }, categories.map(cat => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
+      className: cat === "Journée" ? "day" : cat === "Semaine" && "week"
+    }, cat)))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "content"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, date, " \u2022 ", post.town), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, post.post_title), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+      href: post.guid,
+      className: "btn"
+    }, "En savoir plus"))));
+  }));
 });
 
 // const posts = select("core").getEntityRecords("postType", "hikes", {
