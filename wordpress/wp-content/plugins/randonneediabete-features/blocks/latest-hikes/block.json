@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "rd-blocks/latest-hikes",
+	"version": "0.1.0",
+	"title": "Prochaine randonnées",
+	"category": "widgets",
+	"icon": "schedule",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"posts": {
+			"type": "array"
+		}
+	},
+	"textdomain": "rd-features",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

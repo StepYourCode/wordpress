@@ -1,0 +1,16 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "rd-blocks/base-block",
+	"version": "0.1.0",
+	"title": "Example Block Base",
+	"category": "[text, media, design, widgets, theme, embed] <= Choose",
+	"icon": "smiley",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "rd-features",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
