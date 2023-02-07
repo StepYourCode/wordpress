@@ -7,9 +7,7 @@ services:
     ports:
       - 8079:3306
     volumes:
-      - type: bind
-        source: /database
-        target: /var/lib/mysql
+      - ./database:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -41,6 +39,7 @@ services:
       PMA_HOST: database
       PMA_PORT: 3306
       PMA_ARBITRARY: 1
+      UPLOAD_LIMIT: 100000000
     restart: always
     ports:
       - 8081:80
