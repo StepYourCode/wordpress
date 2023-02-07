@@ -1,0 +1,96 @@
+/*
+  Theme Name: Randonnée & Diabète
+  Theme URI: https://www.remi-rubis.fr/randonneediabete
+  Author: Rémi RUBIS
+  Author URI: https://www.remi-rubis.fr/
+  Description: Ce thème est conçu pour l'association Randonnée & Diabète, il offre une expérience utilisateur intuitive et moderne pour les membres et les visiteurs. Avec un design élégant et une navigation facile, ce thème est l'outil idéal pour présenter les activités de l'association et promouvoir les bienfaits de la randonnée pour les personnes atteintes de diabète. Le thème est également personnalisable pour s'adapter aux besoins de l'association. Il est idéal pour les amoureux de la nature et de la santé, il est cool et facile à utiliser.
+  Tags: blog, handmade, hike
+  Version: 0.1
+  Requires at least: 6.1.1
+  Tested up to: 6.1.1
+  Requires PHP: 7.0
+  Text Domain: randonneediabee
+*/
+
+/*
+  My classes
+*/
+
+/* Manage last item of navigation menu to be a button */
+/* TODO: find a better solution */
+
+header .wp-block-navigation__container li:last-child {
+  background-color: var(--wp--preset--color--rd-primary);
+  border-radius: 2px;
+  border-color: currentColor;
+  border-width: 0;
+  color: var(--wp--preset--color--rd-white);
+  font-family: inherit;
+  font-size: var(--wp--preset--font-size--regular);
+  font-weight: 600;
+  line-height: var(--wp--custom--line-height--normal);
+  padding-top: 0.4em;
+  padding-right: 1.6em;
+  padding-bottom: 0.4em;
+  padding-left: 1.6em;
+  text-decoration: none;
+  box-shadow: var(--wp--custom--shadow--default);
+}
+
+header .wp-block-navigation__container li:last-child:hover {
+  background-color: var(--wp--preset--color--rd-primary-variant);
+}
+
+.home .header--absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.home.admin-bar .header--absolute {
+  top: 32px;
+}
+
+.home .wp-block-post-content {
+  margin: 0 !important;
+}
+
+.btn {
+  display: block;
+  width: max-content;
+  background-color: var(--wp--preset--color--rd-primary);
+  border-radius: 2px;
+  border-color: currentColor;
+  border-width: 0;
+  color: var(--wp--preset--color--rd-white);
+  font-family: inherit;
+  font-size: var(--wp--preset--font-size--medium);
+  font-weight: 600;
+  line-height: var(--wp--custom--line-height--normal);
+  padding-top: 0.2em;
+  padding-right: 1.6em;
+  padding-bottom: 0.2em;
+  padding-left: 1.6em;
+  text-decoration: none;
+  box-shadow: var(--wp--custom--shadow--default);
+  text-align: center;
+}
+
+.home_hike {
+  position: relative;
+  margin-bottom: 10px;
+  box-shadow: var(--wp--custom--shadow--default);
+}
+
+.home_hike .details {
+  text-align: center;
+}
+
+.home_hike .btn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}

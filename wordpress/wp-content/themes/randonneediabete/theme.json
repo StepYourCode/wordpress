@@ -1,0 +1,311 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "layout": {
+      "contentSize": "1300px",
+      "wideSize": "1300px"
+    },
+    "color": {
+      "custom": false,
+      "palette": [
+        {
+          "slug": "rd-primary",
+          "name": "Principal",
+          "color": "#FA6800"
+        },
+        {
+          "slug": "rd-primary-variant",
+          "name": "Principale (variante)",
+          "color": "#FFA05C"
+        },
+        {
+          "slug": "rd-secondary",
+          "name": "Secondaire",
+          "color": "#64B722"
+        },
+        {
+          "slug": "rd-secondary-variant",
+          "name": "Secondaire (variante)",
+          "color": "#9FE364"
+        },
+        {
+          "slug": "rd-light-grey",
+          "name": "Light Grey",
+          "color": "#8B8B8B"
+        },
+        {
+          "slug": "rd-grey",
+          "name": "Grey",
+          "color": "#3E4E50"
+        },
+        {
+          "slug": "rd-black",
+          "name": "Black",
+          "color": "#171717"
+        },
+        {
+          "slug": "rd-white",
+          "name": "White",
+          "color": "#F6F8FF"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "'Spectral', serif",
+          "slug": "spectral",
+          "name": "Spectral",
+          "fontFace": [
+            {
+              "fontFamily": "'Spectral', sans-serif",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": ["file:./assets/fonts/Spectral/Spectral-Regular.woff", "file:./assets/fonts/Spectral/Spectral-Regular.woff2"]
+            },
+            {
+              "fontFamily": "'Spectral', sans-serif",
+              "fontWeight": "600",
+              "fontStyle": "semibold",
+              "fontStretch": "normal",
+              "src": ["file:./assets/fonts/Spectral/Spectral-SemiBold.woff", "file:./assets/fonts/Spectral/Spectral-SemiBold.woff2"]
+            },
+            {
+              "fontFamily": "'Spectral', sans-serif",
+              "fontWeight": "700",
+              "fontStyle": "bold",
+              "fontStretch": "normal",
+              "src": ["file:./assets/fonts/Spectral/Spectral-Bold.woff", "file:./assets/fonts/Spectral/Spectral-Bold.woff2"]
+            }
+          ]
+        },
+        {
+          "fontFamily": "'Open Sans', sans-serif",
+          "slug": "open-sans",
+          "name": "Open Sans",
+          "fontFace": [
+            {
+              "fontFamily": "'Open Sans', sans-serif",
+              "fontWeight": "400",
+              "fontStyle": "normal",
+              "fontStretch": "normal",
+              "src": ["file:./assets/fonts/OpenSans/OpenSans-Regular.woff", "file:./assets/fonts/OpenSans/OpenSans-Regular.woff2"]
+            },
+            {
+              "fontFamily": "'Open Sans', sans-serif",
+              "fontWeight": "600",
+              "fontStyle": "semibold",
+              "fontStretch": "normal",
+              "src": ["file:./assets/fonts/OpenSans/OpenSans-SemiBold.woff", "file:./assets/fonts/OpenSans/OpenSans-SemiBold.woff2"]
+            },
+            {
+              "fontFamily": "'Open Sans', sans-serif",
+              "fontWeight": "700",
+              "fontStyle": "bold",
+              "fontStretch": "normal",
+              "src": ["file:./assets/fonts/OpenSans/OpenSans-Bold.woff", "file:./assets/fonts/OpenSans/OpenSans-Bold.woff2"]
+            }
+          ]
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "small",
+          "size": "0.64rem",
+          "name": "Petit"
+        },
+        {
+          "slug": "medium",
+          "size": "0.8rem",
+          "name": "Medium"
+        },
+        {
+          "slug": "regular",
+          "size": "1rem",
+          "name": "Regular"
+        },
+        {
+          "slug": "large",
+          "size": "1.2rem",
+          "name": "Large"
+        }
+      ]
+    },
+    "spacing": {
+      "padding": true,
+      "margin": true,
+      "units": ["px", "em", "rem", "vh", "vw", "%"],
+      "blockGap": true
+    },
+    "border": {
+      "radius": true,
+      "color": true,
+      "style": true,
+      "width": true
+    },
+    "custom": {
+      "border-radius": {
+        "default": "2px"
+      },
+      "spacing": {
+        "default": "0.7em"
+      },
+      "line-height": {
+        "normal": "1.8rem"
+      },
+      "shadow": {
+        "default": "0px 0px 4px 1px rgba(23,23,23,0.15)"
+      }
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--rd-white)",
+      "text": "var(--wp--preset--color--rd-black)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--open-sans)",
+      "fontSize": "1rem",
+      "lineHeight": "var(--wp--custom--line-height--normal)"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "currentColor"
+        },
+        "typography": {
+          "textDecoration": "none"
+        }
+      },
+      "h1": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--open-sans)",
+          "fontWeight": "bold",
+          "fontSize": "clamp(2rem, 1.9rem + 0.5vw, 2.5rem)",
+          "lineHeight": "1.3"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--open-sans)",
+          "fontWeight": "bold",
+          "fontSize": "clamp(1.699rem, 1.6388rem + 0.30099999999999993vw, 2rem)",
+          "lineHeight": "1.3"
+        },
+        "border": {
+          "left": {
+            "width": "7px",
+            "style": "solid",
+            "color": "var(--wp--preset--color--rd-primary)"
+          }
+        },
+        "spacing": {
+          "padding": {
+            "left": " var(--wp--custom--spacing--default)"
+          }
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--spectral)",
+          "fontWeight": "600",
+          "fontSize": "clamp(1.35rem, 1.2294rem + 0.603vw, 1.953rem)",
+          "lineHeight": "1.3"
+        }
+      },
+      "h4": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--spectral)",
+          "fontWeight": "600",
+          "fontSize": "clamp(1.253rem, 1.1909999999999998rem + 0.31000000000000005vw, 1.563rem)",
+          "lineHeight": "1.3"
+        }
+      },
+      "h5": {
+        "typography": {
+          "fontSize": "clamp(1.063rem, 1.0255999999999998rem + 0.18700000000000006vw, 1.25rem)",
+          "lineHeight": "1.3"
+        }
+      },
+      "h6": {
+        "typography": {
+          "fontSize": "clamp(1.063rem, 1.0255999999999998rem + 0.18700000000000006vw, 1.25rem)",
+          "lineHeight": "1.3"
+        }
+      },
+      "button": {
+        "border": {
+          "color": "currentColor",
+          "radius": "var(--wp--custom--border-radius--default)"
+        },
+        "color": {
+          "background": "var(--wp--preset--color--rd-primary)",
+          "text": "var(--wp--preset--color--rd-white)"
+        },
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--regular)",
+          "fontWeight": "600",
+          "lineHeight": "var(--wp--custom--line-height--normal)"
+        },
+        "spacing": {
+          "padding": {
+            "top": "0.4em",
+            "right": "1.6em",
+            "bottom": "0.4em",
+            "left": "1.6em"
+          }
+        },
+        "shadow": "var(--wp--custom--shadow--default)",
+        ":hover": {
+          "color": {
+            "background": "var(--wp--preset--color--rd-primary-variant)"
+          }
+        },
+        ":focus": {
+          "color": {
+            "background": "var(--wp--preset--color--rd-primary-variant)"
+          }
+        },
+        ":active": {
+          "color": {
+            "background": "var(--wp--preset--color--rd-primary-variant)"
+          },
+          "shadow": "none"
+        }
+      }
+    },
+    "blocks": {
+      "core/paragraph": {
+        "elements": {
+          "link": {
+            "typography": {
+              "textDecoration": "underline"
+            },
+            "color": {
+              "text": "var(--wp--preset--color--rd-primary)"
+            },
+            ":hover": {
+              "typography": {
+                "textDecoration": "none"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "templateParts": [
+    {
+      "name": "header",
+      "area": "header",
+      "title": "Header"
+    },
+    {
+      "name": "footer",
+      "area": "footer",
+      "title": "Footer"
+    }
+  ]
+}
